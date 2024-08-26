@@ -1,0 +1,60 @@
+@use 'main.scss' as var;
+@include var.baseui;
+
+.not-found-container {
+  @include var.notfound;
+  width: 100%;
+  overflow: auto;
+  min-height: 100vh;
+}
+
+.not-found-container1,
+.not-found-container2 {
+  @include var.notfound;
+  text-align: center;
+  margin: var.$space-threeunits auto;
+}
+
+.not-found-text1 {
+  font-size: 10rem; 
+  color: var.$color-primary1-blue100;
+  font-weight: bold;
+  margin: 0;
+}
+
+.not-found-text2 {
+  font-size: 2rem;
+  color: var.$color-gray-black;
+  margin: var.$space-oneandhalfunits 0;
+}
+
+.return-button {
+  background-color: var.$color-primary1-blue80;
+  color: var.$color-gray-white;
+  border: none;
+  padding: var.$space-halfunit var.$space-oneandhalfunits;
+  border-radius: var.$radius8;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  margin: var.$space-unit auto; // Center the button horizontally
+  text-align: center; // Ensure text is centered within the button
+
+  &:hover {
+    background-color: var.$color-primary1-blue100;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+h3 {
+  text-align: center;
+  color: var.$color-gray-black;
+  font-size: 2rem;
+
+}

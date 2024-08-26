@@ -69,6 +69,12 @@ module.exports = {
       ...htmlWebpackPluginConfig,
     }),
 
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: path.resolve(__dirname, 'src/views/404.html'),
+      ...htmlWebpackPluginConfig,
+    }),
+
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -79,4 +85,13 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+  devServer: {
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/$/, to: '/dashboard.html' },
+        { from: /^\/add-page.html/, to: '/add.html' },
+        { from: /./, to: '/404.html' },
+      ],
+    },
+  },
 };

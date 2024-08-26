@@ -5,6 +5,7 @@ import '../sass/main.scss';
 import Dashboard from './ui/pages/dashboard';
 import Add from './ui/pages/story/add';
 import Edit from './ui/pages/story/edit';
+import Page404 from './ui/pages/404page';
 import * as bootstrap from 'bootstrap';
  
 const routes = {
@@ -13,7 +14,10 @@ const routes = {
   '/story/edit.html': Edit,
 };
  
-const detectRoute = () => routes[window.location.pathname];
+const detectRoute = () => {
+  const route = routes[window.location.pathname];
+  return route ? route : Page404;
+};
  
 const initPages = () => {
   const header = document.querySelector('header');
