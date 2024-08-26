@@ -1,6 +1,52 @@
-@use 'main.scss'as var;
-
+@use 'main.scss'as var; 
 @include var.baseui;
+
+.profile-card {
+    background-color: var.$color-gray-white;
+    border-radius: var.$radius10;
+    box-shadow: 0 4px 8px rgba(var.$color-gray-black, 0.1);
+    overflow: hidden;
+    text-align: center;
+    margin: var.$space-threeunits auto;
+  
+    .profile-img {
+      img {
+        width: 100%;
+        border-bottom: 5px solid var.$color-primary1-blue80;
+      }
+    }
+  
+    .profile-content {
+      padding: var.$space-unit;
+  
+      .profile-name {
+        font-size: var.$space-twounits;
+        color: var.$color-gray-black;
+        margin: var.$space-halfunit 0;
+      }
+  
+      .profile-description {
+        font-size: var.$size-xsmall;
+        color: var.$color-gray-black;
+        margin-bottom: var.$space-oneandhalfunits;
+      }
+  
+      .profile-btn {
+        background-color: var.$color-primary1-blue80;
+        color: var.$color-gray-white;
+        border: none;
+        padding: var.$space-halfunit var.$space-unit;
+        border-radius: var.$radius8;
+        font-size: var.$size-xsmall;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: var.$color-primary1-blue100;
+        }
+      }
+    }
+  }
 
 .card-container {
     display: grid;
@@ -11,12 +57,12 @@
 .card {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-gray-white);
-    border: 2px solid var(--color-gray-800);
-    border-radius: var(--radius8);
-    padding: var(--space-twounits);
+    background-color: var.$color-gray-black; // Gunakan var.$ untuk variabel SCSS
+    border: 10px solid var.$color-gray-800;
+    border-radius: var.$radius10;
+    padding: var.$space-twounits;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 5px;
+
     flex-grow: 1;
     text-align: left;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -32,8 +78,8 @@
         max-width: 80%;
         margin: 0 auto; // Center horizontally
         height: auto;
-        border-radius: var(--radius8);
-        margin-bottom: var(--space-unit);
+        border-radius: var.$radius8;
+        margin-bottom: var.$space-unit;
     }
 
     .card-body {
@@ -44,23 +90,23 @@
         flex-grow: 1;
 
         .card-title {
-            color: var(--color-gray-black);
-            margin-bottom: var(--space-halfunit);
+            color: var.$color-gray-black;
+            margin-bottom: var.$space-halfunit;
         }
 
         .card-text {
-            color: var(--color-gray-800);
-            font-size: var(--size-xsmall);
-            margin-bottom: var(--space-halfunit);
+            color: var.$color-gray-800;
+            font-size: var.$size-xsmall;
+            margin-bottom: var.$space-halfunit;
         }
 
         .card-date {
-            font-size: var(--size-xsmall);
-            color: var(--color-secondary-gray500);
+            font-size: var.$size-xsmall;
+            color: var.$color-secondary-gray500;
         }
 
         .btn-primary {
-            margin-top: var(--space-oneandhalfunits);
+            margin-top: var.$space-oneandhalfunits;
         }
     }
 }
@@ -75,7 +121,6 @@
         width: 100%;
     }
 }
-
 
 .footer {
     background-color: var.$color-gray-black;

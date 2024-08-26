@@ -12,19 +12,12 @@ class FooterApp extends LitWithoutShadowDom {
       <footer class="footer">
           <div class="container">
               <div class="footer-content">
-                  <div class="footer-section about">
-                      <h2 class="logo-text">YourCompany</h2>
-                      <p>YourCompany is a leading provider of quality products and services. We are committed to delivering the best experiences to our customers.</p>
-                  </div>
-
                   <div class="footer-section links">
                       <h2>Quick Links</h2>
                       <ul>
                           <li><a href="#">Home</a></li>
-                          <li><a href="#">About</a></li>
-                          <li><a href="#">Services</a></li>
-                          <li><a href="#">Contact</a></li>
-                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="/story/add.html">Add</a></li>
+                          <li><a href="https://github.com/Tyrant2407/story-app">Github Source</a></li>
                       </ul>
                   </div>
 
@@ -40,7 +33,7 @@ class FooterApp extends LitWithoutShadowDom {
               </div>
 
               <div class="footer-bottom">
-                  &copy; 2024 YourCompany | Designed by You
+                  &copy; 2024 Dicoding | Rizky
               </div>
           </div>
       </footer>

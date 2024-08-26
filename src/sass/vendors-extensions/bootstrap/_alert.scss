@@ -1,0 +1,30 @@
+@use '../../main.scss' as var;
+@include var.baseui;
+
+.alert {
+    border-color: var.$color-primary1-blue100;
+    color: var.$color-gray-black;
+    border-radius: var.$radius10;
+    padding: var.$space-oneandhalfunits var.$space-twounits;
+    font-size: var.$size-xsmall;
+  
+    .alert-heading {
+      font-size: 1.25rem;
+      color: var.$color-gray-black;
+    }
+  
+    .btn-close {
+      color: var.$color-gray-white;
+      opacity: 0.8;
+  
+      &:hover {
+        color: var.$color-gray-800;
+        opacity: 1;
+      }
+    }
+  
+    strong {
+      color: var.$color-gray-black;
+    }
+  }
+  

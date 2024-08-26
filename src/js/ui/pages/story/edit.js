@@ -1,3 +1,6 @@
+import NavLinkApp from "../../components/AppBar/navbar-link";
+import BrandNameApp from "../../components/component/brandname"; 
+
 const Edit = {
     async init() {
         await this._initialData();

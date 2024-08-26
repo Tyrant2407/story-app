@@ -1,7 +1,14 @@
 // ==================================================
 // Bootstrap
 // ==================================================
- 
+
+// Using built-in modules
+@use 'sass:map';
+
+// Custom modules
+@use '../vendors-extensions/bootstrap/buttons' as btn;
+@use '../vendors-extensions/bootstrap/card' as card;
+
 //
 // Functions Bootstrap
 //
@@ -13,7 +20,17 @@
 @import '~bootstrap/scss/variables';
  
 // Menerapkan/override variables Bootstrap apa pun di sini
- 
+
+// Buttons
+$btn-padding-x: btn.$padding-x;
+$btn-padding-y: btn.$padding-y;
+$btn-transition: btn.$transition;
+
+// Cards
+$card-border-radius: card.$border-radius;
+$card-inner-border-radius: card.$inner-border-radius;
+
+
 //
 // Konfigurasi Bootstrap
 //

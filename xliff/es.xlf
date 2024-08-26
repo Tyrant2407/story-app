@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="es" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="sd19b529ff81b9828">
+  <source>Introducing our Story Application</source>
+</trans-unit>
+<trans-unit id="s656d821976d1725c">
+  <source>Web Developer | Dicoding</source>
+</trans-unit>
+<trans-unit id="s31f1afc1bfe1cb3a">
+  <source>Learn more</source>
+</trans-unit>
+</body>
+</file>
+</xliff>

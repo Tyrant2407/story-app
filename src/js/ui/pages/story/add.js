@@ -1,3 +1,10 @@
+import "../../../../sass/add.scss";
+import "../../../../sass/main.scss";
+import NavLinkApp from "../../components/AppBar/navbar-link";
+import inputimage from "../../components/forms/input-image";
+import BrandNameApp from "../../components/component/brandname"; 
+import Alertmsg from "../../components/component/alert"; 
+
 const Add = {
     async init() {
         this._initialListener();

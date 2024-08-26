@@ -1,2 +1,54 @@
 @use 'main.scss' as var;
 @include var.baseui;
+
+header {
+    background-color: var.$color-gray-white;
+    color: var.$color-gray-black;
+
+    .navbar-brand {
+        color: var.$color-gray-white;
+    }
+}
+
+.main-content {
+    @include var.fullflexwithcentercolumn;
+    min-height: 100vh;
+    padding-top: 70px; 
+}
+
+.container {
+    @include var.paddingtopandbottom;
+    @include var.paddingleftandright;
+    max-width: var.$size-maxwidth;
+}
+
+.form-control {
+    @include var.whitewithcolorborderwhite;
+}
+
+.form-label {
+    color: var.$color-gray-black;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .heading2 {
+        font-size: 1.8rem;
+    }
+
+    .heading3 {
+        font-size: 1.1rem;
+    }
+
+    .heading1 {
+        font-size: 2.5rem;
+    }
+
+    .heading4 {
+        font-size: 1.2rem;
+    }
+}
