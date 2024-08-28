@@ -2,6 +2,7 @@
 import LitWithoutShadowDom from '../../../base/LitWithOutShadowDom';
 import { html } from 'lit';
 import LocalePicker from '../component/LocalePicker';
+import NavLinkAuth from './NavLinkAuth';
 
 class NavLinkApp extends LitWithoutShadowDom {
   constructor() {
@@ -16,6 +17,12 @@ class NavLinkApp extends LitWithoutShadowDom {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/story/add.html">Add Page</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/auth/login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <nav-link-auth class="d-none" id="userLoggedMenu"></nav-link-auth>
               </li>
               <locale-picker></locale-picker>
       </ul>

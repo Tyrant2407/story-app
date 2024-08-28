@@ -2,49 +2,50 @@ import "../../../../sass/add.scss";
 import "../../../../sass/main.scss";
 import NavLinkApp from "../../components/AppBar/navbar-link";
 import inputimage from "../../components/forms/input-image";
-import BrandNameApp from "../../components/component/brandname"; 
-import Alertmsg from "../../components/component/alert"; 
+import BrandNameApp from "../../components/component/brandname";
+import Alertmsg from "../../components/component/alert";
+import CheckUserAuth from '../auth/check-user-auth';
+import Story from '../../../network/story';
 
 const Add = {
     async init() {
+        CheckUserAuth.checkLoginState();
         this._initialListener();
     },
 
     _initialListener() {
-        const evidenceInput = document.querySelector('#validationCustomEvidence');
-        evidenceInput.addEventListener('change', () => {
-            this._updatePhotoPreview();
-        });
-
         const addFormRecord = document.querySelector('#addRecordForm');
         addFormRecord.addEventListener(
-            'submit',
-            async (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-
-                addFormRecord.classList.add('was-validated');
-                await this._sendPost(); // Tunggu sampai proses selesai
-            },
-            false,
+          'submit',
+          (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+    
+            addFormRecord.classList.add('was-validated');
+            this._sendPost();
+          },
+          false,
         );
     },
 
     async _sendPost() {
         const formData = this._getFormData();
+        
+        console.log('Form Data:', formData); // Tambahkan log untuk debugging
+      
         if (this._validateFormData({ ...formData })) {
-            const photoUrl = await this._getBase64(formData.photoUrl); // Tunggu konversi ke base64
-            const existingData = JSON.parse(localStorage.getItem('userListStory')) || [];
-            const data = {
-                ...formData,
-                photoUrl,
-            };
-            existingData.push(data);
-            localStorage.setItem('userListStory', JSON.stringify(existingData));
+          try {
+            const response = await Story.store(formData);
+            console.log('Store Response:', response); // Tambahkan log untuk debugging
+            window.alert('New story added successfully');
             this._goToDashboardPage();
+          } catch (error) {
+            console.error('Error storing story:', error.message);
+          }
         }
     },
-
+      
+    
     _getFormData() {
         const nameInput = document.querySelector('#validationCustomName');
         const evidenceInput = document.querySelector('#validationCustomEvidence');
@@ -52,11 +53,10 @@ const Add = {
         var date = new Date().toISOString();
 
         return {
-            id: `story-${Math.random().toString(36).substring(2, 18)}`,
             name: nameInput.value,
             createdAt: date,
             description: descriptionInput.value,
-            photoUrl: evidenceInput.files[0], // file disimpan untuk diolah
+            photo: evidenceInput.files[0], 
         };
     },
 
@@ -78,6 +78,7 @@ const Add = {
     _validateFormData(formData) {
         return Object.values(formData).every((item) => item !== '');
     },
+
 
     async _getBase64(file) {
         return new Promise((resolve, reject) => {

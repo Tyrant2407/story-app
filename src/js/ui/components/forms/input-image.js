@@ -19,7 +19,7 @@ class InputImageApp extends LitWithoutShadowDom {
     this.defaultImageAlt = '';
     updateWhenLocaleChanges(this);
   }
-  
+
   render() {
     return html`
       <span class="input-component-text"><span>${msg(`Photo`)}</span></span>
@@ -108,5 +108,5 @@ class InputImageApp extends LitWithoutShadowDom {
     return html` ${imgChangeTemplate} `;
   }
 }
-  
+
 customElements.define('inputimage-component', InputImageApp);

@@ -51,7 +51,7 @@ $card-inner-border-radius: card.$inner-border-radius;
 @import '~bootstrap/scss/helpers';
  
 // Komponen-Komponen
-@import '~bootstrap/scss/tables';
+// @import '~bootstrap/scss/tables';
 @import '~bootstrap/scss/forms';
 @import '~bootstrap/scss/buttons';
 @import '~bootstrap/scss/transitions';
@@ -60,7 +60,7 @@ $card-inner-border-radius: card.$inner-border-radius;
 @import '~bootstrap/scss/navbar'; // Requires nav
 @import '~bootstrap/scss/card';
 @import '~bootstrap/scss/close';
-@import '~bootstrap/scss/modal'; // Requires transitions
+// @import '~bootstrap/scss/modal'; // Requires transitions
  
 //
 // Utilities API untuk menghasilkan utility classes

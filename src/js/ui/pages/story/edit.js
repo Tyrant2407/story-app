@@ -1,8 +1,12 @@
 import NavLinkApp from "../../components/AppBar/navbar-link";
 import BrandNameApp from "../../components/component/brandname"; 
+import CheckUserAuth from '../auth/check-user-auth';
 
 const Edit = {
     async init() {
+        CheckUserAuth.checkLoginState();
+ 
+        await this._initialUI();
         await this._initialData();
         this._initialListener();
     },

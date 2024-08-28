@@ -5,6 +5,8 @@ import '../sass/main.scss';
 import Dashboard from './ui/pages/dashboard';
 import Add from './ui/pages/story/add';
 import Edit from './ui/pages/story/edit';
+import Login from './ui/pages/auth/login';
+import Register from './ui/pages/auth/register';
 import Page404 from './ui/pages/404page';
 import * as bootstrap from 'bootstrap';
  
@@ -12,6 +14,9 @@ const routes = {
   '/': Dashboard,
   '/story/add.html': Add,
   '/story/edit.html': Edit,
+
+  '/auth/login.html': Login,
+  '/auth/register.html': Register,
 };
  
 const detectRoute = () => {
