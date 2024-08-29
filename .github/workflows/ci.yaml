@@ -33,18 +33,17 @@ jobs:
       - name: Set up Google Cloud credentials
         run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > $HOME/gcloud-service-key.json
 
-      - name: Deploy to Firebase Hosting
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: $HOME/gcloud-service-key.json
+      - name: Debug Google Cloud credentials
+        run: cat $HOME/gcloud-service-key.json # Debug step, remove after verifying
+
+      - name: Authenticate with Google Cloud
         run: |
-          # Authenticate with Google Cloud using the service account
           gcloud auth activate-service-account --key-file=$HOME/gcloud-service-key.json
-          
-          # Set the project ID for Google Cloud
           gcloud config set project ${{ secrets.GCLOUD_PROJECT_ID }}
-          
-          # Deploy to Firebase Hosting
-          npx firebase deploy --only hosting --debug
+
+      - name: Deploy to Firebase Hosting
+        run: npx firebase deploy --only hosting --debug
+
 
 
 # name: Firebase Hosting Deployment
