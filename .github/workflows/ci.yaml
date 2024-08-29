@@ -30,8 +30,43 @@ jobs:
       - name: Build project
         run: npm run build:prod
 
-      - name: hosting
-        run: firebase deploy
+      - name: Deploy to Firebase Hosting
+        run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+
+# name: Firebase Hosting Deployment
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   build_and_deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Install Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '22'
+
+#       - name: Install dependencies
+#         run: npm install
+      
+#       - name: Install firebase-tools
+#         run: npm install firebase-tools --global
+
+#       - name: Build project
+#         run: npm run build:prod
+
+#       - name: hosting
+#         run: firebase deploy
 
 
 # name: Firebase Hosting Deployment
