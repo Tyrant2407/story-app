@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import '../../../../sass/add.scss';
 import '../../../../sass/main.scss';
 import NavLinkApp from '../../components/AppBar/navbar-link';

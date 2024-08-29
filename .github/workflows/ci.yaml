@@ -3,10 +3,10 @@ name: Firebase Hosting Deployment
 on:
   push:
     branches:
-      - main  # Men-trigger workflow setiap ada push ke branch `main`
+      - main
   pull_request:
     branches:
-      - main  # Men-trigger workflow setiap ada pull request ke branch `main`
+      - main
 
 jobs:
   build_and_deploy:
@@ -19,17 +19,16 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Pastikan menggunakan versi Node.js yang sesuai dengan proyek Anda
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
+      
+      - name: Install firebase-tools
+        run: npm install firebase-tools --global
 
       - name: Build project
-        run: build:prod  # Sesuaikan dengan script build yang ada di package.json Anda
+        run: npm run build:prod
 
-      - name: Deploy to Firebase Hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: |
-          npm install -g firebase-tools
-          firebase deploy --only hosting --token $FIREBASE_TOKEN
+#     - name: hosting
+#       run: firebase deploy
