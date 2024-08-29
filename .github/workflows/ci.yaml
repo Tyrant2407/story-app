@@ -25,23 +25,13 @@ jobs:
         run: npm install
       
       - name: Install firebase-tools
-        run: npm install -g firebase-tools
+        run: npm install firebase-tools --global
 
       - name: Build project
         run: npm run build:prod
 
-      - name: Set up Google Cloud credentials
-        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > $HOME/gcloud-service-key.json
-
-      - name: Authenticate with Google Cloud
-        run: |
-          gcloud auth activate-service-account --key-file=$HOME/gcloud-service-key.json
-          gcloud config set project ${{ secrets.GCLOUD_PROJECT_ID }}
-
-      - name: Deploy to Firebase Hosting
-        run: npx firebase deploy --only hosting --debug
-
-
+      - name: hosting
+        run: firebase deploy
 
 
 # name: Firebase Hosting Deployment
