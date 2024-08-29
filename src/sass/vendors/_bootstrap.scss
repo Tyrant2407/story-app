@@ -8,17 +8,18 @@
 // Custom modules
 @use '../vendors-extensions/bootstrap/buttons' as btn;
 @use '../vendors-extensions/bootstrap/card' as card;
+@use '../vendors-extensions/bootstrap/dropdown' as dropdown;
 
 //
 // Functions Bootstrap
 //
 @import '~bootstrap/scss/functions';
- 
+
 //
 // Variables Bootstrap
 //
 @import '~bootstrap/scss/variables';
- 
+
 // Menerapkan/override variables Bootstrap apa pun di sini
 
 // Buttons
@@ -30,6 +31,9 @@ $btn-transition: btn.$transition;
 $card-border-radius: card.$border-radius;
 $card-inner-border-radius: card.$inner-border-radius;
 
+// dropdown
+$dropdown-border-color: dropdown.$border-color;
+$dropdown-border-width: dropdown.$border-width;
 
 //
 // Konfigurasi Bootstrap
@@ -39,7 +43,7 @@ $card-inner-border-radius: card.$inner-border-radius;
 @import '~bootstrap/scss/root';
 @import '~bootstrap/scss/utilities';
 @import '~bootstrap/scss/reboot';
- 
+
 //
 // Layouts dan components
 //
@@ -47,9 +51,9 @@ $card-inner-border-radius: card.$inner-border-radius;
 @import '~bootstrap/scss/images';
 @import '~bootstrap/scss/containers';
 @import '~bootstrap/scss/grid';
- 
+
 @import '~bootstrap/scss/helpers';
- 
+
 // Komponen-Komponen
 // @import '~bootstrap/scss/tables';
 @import '~bootstrap/scss/forms';
@@ -61,12 +65,12 @@ $card-inner-border-radius: card.$inner-border-radius;
 @import '~bootstrap/scss/card';
 @import '~bootstrap/scss/close';
 // @import '~bootstrap/scss/modal'; // Requires transitions
- 
+
 //
 // Utilities API untuk menghasilkan utility classes
 //
 @import '~bootstrap/scss/utilities/api';
- 
+
 //
 // Tambahkan custom code di sini
 //

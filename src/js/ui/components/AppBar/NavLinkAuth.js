@@ -1,9 +1,11 @@
-import LitWithoutShadowDom from '../../../base/LitWithOutShadowDom';
 import { html } from 'lit';
 import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import LitWithoutShadowDom from '../../../base/LitWithOutShadowDom';
+import Utils from '../../../utils/utils';
 import Config from '../../../config/config';
 import CheckUserAuth from '../../pages/auth/check-user-auth';
 import Auth from '../../../network/auth';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 class NavLinkAuth extends LitWithoutShadowDom {
   constructor() {
@@ -19,6 +21,7 @@ class NavLinkAuth extends LitWithoutShadowDom {
           href="#"
           role="button"
           data-bs-toggle="dropdown"
+          aria-expanded="false"
         >
           <div class="me-2 d-inline-block">
             <img
@@ -32,7 +35,9 @@ class NavLinkAuth extends LitWithoutShadowDom {
           <span id="nameUserLogged"></span>
         </a>
         <ul class="dropdown-menu">
-          <a class="dropdown-item" id="userLogOut" @click=${this._userLogOut}>Keluar</a>
+          <li>
+            <a class="dropdown-item" id="userLogOut" @click=${this._userLogOut}>${msg(`Keluar`)}</a>
+          </li>
         </ul>
       </li>
     `;
@@ -41,6 +46,7 @@ class NavLinkAuth extends LitWithoutShadowDom {
   _userLogOut(event) {
     event.preventDefault();
     Utils.destroyUserToken(Config.USER_TOKEN_KEY);
+
     CheckUserAuth.checkLoginState();
   }
 }

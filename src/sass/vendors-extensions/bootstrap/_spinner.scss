@@ -1,0 +1,14 @@
+/* Tambahkan ini ke file CSS Anda */
+spinner-load {
+  display: none; /* Sembunyikan spinner secara default */
+  position: fixed; /* Posisi tetap di layar */
+  top: 50%; /* Tengah vertikal */
+  left: 50%; /* Tengah horizontal */
+  transform: translate(-50%, -50%); /* Sesuaikan posisi */
+  z-index: 9999; /* Pastikan spinner di atas elemen lainnya */
+}
+
+.spinner-grow {
+  height: 60px;
+  width: 60px;
+}

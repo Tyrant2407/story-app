@@ -1,0 +1,20 @@
+// login.scss
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group .form-control {
+  flex: 1; // Ensure the input takes up remaining space
+}
+
+.input-group .btn {
+  border-radius: 0; // Remove rounded corners to match input
+  margin-left: -1px; // Remove gap between input and button
+  height: 100%; // Make button height match input
+  padding: 0.5rem; // Adjust padding to match the input
+}
+
+.input-group .btn i {
+  font-size: 1rem; // Adjust icon size if needed
+}

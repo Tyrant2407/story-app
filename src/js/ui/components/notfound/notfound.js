@@ -1,11 +1,11 @@
-import LitWithoutShadowDom from '../../../base/LitWithOutShadowDom';
 import { html } from 'lit';
 import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import LitWithoutShadowDom from '../../../base/LitWithOutShadowDom';
 
 class NotfoundApp extends LitWithoutShadowDom {
   static get properties() {
     return {
-      link: { type: String }
+      link: { type: String },
     };
   }
 
@@ -13,7 +13,7 @@ class NotfoundApp extends LitWithoutShadowDom {
     super();
     updateWhenLocaleChanges(this);
   }
-  
+
   render() {
     return html`
       <h3>${msg(`OOPS! PAGE NOT FOUND`)}</h3>
@@ -25,7 +25,9 @@ class NotfoundApp extends LitWithoutShadowDom {
           ${msg(`WE ARE SORRY, BUT THE PAGE YOU REQUESTED WAS NOT FOUND`)}
         </h2>
       </div>
-      <button class="btn return-button button" @click=${() => this._goToDashboard()}>${msg(`Back`)}</button>
+      <button class="btn return-button button" @click=${() => this._goToDashboard()}>
+        ${msg(`Back`)}
+      </button>
     `;
   }
 
@@ -34,5 +36,5 @@ class NotfoundApp extends LitWithoutShadowDom {
     document.querySelector;
   }
 }
-  
+
 customElements.define('notfound-component', NotfoundApp);

@@ -81,7 +81,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src/views/auth/login.html'),
       ...htmlWebpackPluginConfig,
     }),
-    
+
     new HtmlWebpackPlugin({
       title: 'Register',
       filename: 'auth/register.html',

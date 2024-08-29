@@ -1,22 +1,19 @@
-import LitShadowDom from '../../../base/LitWithShadowDom';
 import { html } from 'lit';
-import "../../../../sass/vendors-extensions/bootstrap/_brandname.scss";
-import "../../../../sass/main.scss";
+import LitShadowDom from '../../../base/LitWithShadowDom';
+import '../../../../sass/vendors-extensions/bootstrap/_brandname.scss';
+import '../../../../sass/main.scss';
 
 class BrandNameApp extends LitShadowDom {
-
   createRenderRoot() {
-    return this; 
+    return this;
   }
-  
+
   constructor() {
     super();
   }
-  
+
   render() {
-    return html`
-      <div class="brandname"><h1>Story App</h1></div>
-    `;
+    return html` <div class="brandname"><h1>Story App</h1></div> `;
   }
 }
 

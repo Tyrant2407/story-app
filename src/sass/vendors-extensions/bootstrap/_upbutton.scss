@@ -2,36 +2,38 @@
 @include var.baseui;
 
 .scroll-to-top {
-    background-color: var.$color-primary1-blue80;
-    color: var.$color-gray-white;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 22px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: block;
+  background-color: var.$color-primary1-blue80;
+  color: var.$color-gray-white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: block;
 }
 
 .scroll-to-top:hover {
-    background-color: var.$color-primary1-blue100;
+  background-color: var.$color-primary1-blue100;
 }
 
 .scroll-to-top:focus {
-    outline: none;
+  outline: none;
 }
 
 .scroll-to-top:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
 }

@@ -1,11 +1,11 @@
-import LitWithoutShadowDom from '../../../base/LitWithOutShadowDom';
 import { html } from 'lit';
+import LitWithoutShadowDom from '../../../base/LitWithOutShadowDom';
 
 class SocmedLogoApp extends LitWithoutShadowDom {
   constructor() {
     super();
   }
-  
+
   render() {
     return html`
       <svg viewBox="0 0 877.7142857142857 1024" class="home-icon10">
@@ -21,5 +21,5 @@ class SocmedLogoApp extends LitWithoutShadowDom {
     `;
   }
 }
-  
+
 customElements.define('socmed-component', SocmedLogoApp);

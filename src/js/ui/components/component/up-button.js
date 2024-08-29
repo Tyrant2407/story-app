@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import "../../../../sass/vendors-extensions/bootstrap/_upbutton.scss";
+import '../../../../sass/vendors-extensions/bootstrap/_upbutton.scss';
 
 class ScrollToTopButton extends LitElement {
   constructor() {
