@@ -1,5 +1,6 @@
 import Auth from '../../../network/auth';
 import CheckUserAuth from './check-user-auth';
+import SpinnerElement from '../../components/component/spinner-auth';
 
 const Register = {
   async init() {
@@ -10,6 +11,8 @@ const Register = {
 
   _initialListener() {
     const registerForm = document.querySelector('#registerForm');
+    const spinnerElement = document.querySelector('spinner-element'); // Ambil spinner element
+
     registerForm.addEventListener(
       'submit',
       async (event) => {
@@ -17,7 +20,14 @@ const Register = {
         event.stopPropagation();
 
         registerForm.classList.add('was-validated');
+
+        // Tampilkan spinner
+        spinnerElement.loading = true;
+
         await this._getRegistered();
+
+        // Sembunyikan spinner setelah proses selesai
+        spinnerElement.loading = false;
       },
       false,
     );

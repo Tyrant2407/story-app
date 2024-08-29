@@ -1,11 +1,10 @@
-// login.js
-
 import Auth from '../../../network/auth';
 import InputWithValidation from '../../components/forms/InputWithValidation';
 import Config from '../../../config/config';
 import Utils from '../../../utils/utils';
 import CheckUserAuth from './check-user-auth';
 import '../../../../sass/login.scss';
+import Spinner from '../../components/component/spinner';
 
 const Login = {
   async init() {
@@ -18,6 +17,7 @@ const Login = {
     const loginForm = document.querySelector('#loginForm');
     const togglePassword = document.querySelector('#togglePassword');
     const passwordInput = document.querySelector('#validationCustomPassword');
+    const spinner = document.querySelector('.spinner-load');
 
     loginForm.addEventListener(
       'submit',
@@ -26,7 +26,14 @@ const Login = {
         event.stopPropagation();
 
         loginForm.classList.add('was-validated');
+
+        // Tampilkan spinner
+        spinner.style.display = 'block';
+
         await this._getLogged();
+
+        // Sembunyikan spinner setelah proses selesai
+        spinner.style.display = 'none';
       },
       false,
     );
