@@ -3,10 +3,10 @@ name: Firebase Hosting Deployment
 on:
   push:
     branches:
-      - main  # Trigger workflow on push to the `main` branch
+      - main
   pull_request:
     branches:
-      - main  # Trigger workflow on pull request to the `main` branch
+      - main
 
 jobs:
   build_and_deploy:
@@ -19,22 +19,25 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'  # Use the Node.js version specified
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build project
-        run: npm run build:prod  # Adjust this to your build script
+        run: npm run build:prod
 
       - name: Install firebase-tools
-        run: npm install firebase-tools --save-dev  # Install firebase-tools locally
+        run: npm install firebase-tools --save-dev
+
+      - name: Set up Google Cloud credentials
+        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > $HOME/gcloud-service-key.json
 
       - name: Deploy to Firebase Hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GOOGLE_APPLICATION_CREDENTIALS: $HOME/gcloud-service-key.json
         run: |
-          npx firebase deploy --only hosting --token $FIREBASE_TOKEN --debug
+          npx firebase deploy --only hosting --debug
 
 
 
